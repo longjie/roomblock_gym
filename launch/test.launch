@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="roomblock_gym" name="publisher" type="publisher.py" required="true"/>
+  <test pkg="roomblock_gym" test-name="test_api" type="test_roomblock_api.py"/>
+  <test pkg="roomblock_gym" test-name="test_env" type="test_roomblock_env.py"/>
+</launch>

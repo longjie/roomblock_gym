@@ -1,0 +1,8 @@
+<launch>
+  <!-- launch STDR simulator -->
+  <include if="false" file="$(find roomblock_gym)/launch/stdr.launch"/>
+
+  <!-- run train node -->
+  <node ns="robot0" name="train" pkg="roomblock_gym" type="train_roomblock.py" output="screen"/>
+
+</launch>

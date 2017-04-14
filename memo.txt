@@ -1,0 +1,8 @@
+
+env = gym.make('Ros-v0')
+
+__init__:
+for topin in observation:
+    for name, type in topic:
+    	self.subs.append(rospy.Subscriber(name, type))
+

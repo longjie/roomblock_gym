@@ -1,0 +1,12 @@
+observation:
+  - topic:
+      name: /odom
+      type: sensor_msgs/Odometry
+  - topic:
+      name: /scan
+      type: sensor_msgs/LaserScan
+action:
+  - topic:
+      name: /cmd_vel
+      type: geometry_msgs/TwistStamped
+

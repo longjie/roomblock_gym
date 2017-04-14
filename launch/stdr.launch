@@ -1,0 +1,16 @@
+<launch>
+  <!-- Number of robot for training. robot0 is for control -->
+  <arg name="map_file" default="empty_room.yaml"/>
+
+  <!-- launch STDR manager -->
+  <include file="$(find stdr_robot)/launch/robot_manager.launch" />
+  <node name="stdr_server" pkg="stdr_server" type="stdr_server_node" output="screen" args="$(find roomblock_gym)/map/$(arg map_file)"/>
+  
+  <node pkg="tf" type="static_transform_publisher" name="world2map" args="0 0 0 0 0 0  world map 100" />
+
+  <include file="$(find stdr_gui)/launch/stdr_gui.launch"/>
+
+  <!-- add a robot to STDR -->
+  <node name="add_robot" pkg="stdr_robot" type="robot_handler" args="add $(find roomblock_gym)/robot/roomba.yaml 1 1 0"/>
+
+</launch>
